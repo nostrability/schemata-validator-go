@@ -1,0 +1,26 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: nostrability/schemata-go
+          path: ../schemata-go
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
+      - run: go mod edit -replace github.com/nostrability/schemata-go=../schemata-go
+      - run: go mod tidy
+      - run: go test ./...
