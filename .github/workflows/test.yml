@@ -12,10 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/checkout@v4
-        with:
-          repository: nostrability/schemata-go
-          path: ../schemata-go
+      - name: Clone schemata-go
+        run: git clone https://github.com/nostrability/schemata-go.git ../schemata-go
 
       - uses: actions/setup-go@v5
         with:
