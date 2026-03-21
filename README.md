@@ -1,5 +1,7 @@
 # schemata-validator-go
 
+[![Test](https://github.com/nostrability/schemata-validator-go/actions/workflows/test.yml/badge.svg)](https://github.com/nostrability/schemata-validator-go/actions/workflows/test.yml)
+
 Go validator for [Nostr](https://nostr.com/) protocol JSON schemas. Built on top of [`schemata-go`](https://github.com/nostrability/schemata-go).
 
 ## When to use this
